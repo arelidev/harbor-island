@@ -1,0 +1,24 @@
+.hotspot-wrapper {
+    .hotspot-container {
+        .hotspot-item {
+            @apply absolute bg-primary text-white flex items-center justify-center cursor-pointer;
+            border-radius: 16px;
+            padding: 3px;
+            height: 26px;
+            min-width: 26px;
+        }
+    }
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, .5);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+}

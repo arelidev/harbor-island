@@ -1,0 +1,115 @@
+@layer base {
+    html {
+        font-family: 'Inter', 'sans-serif';
+        scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Marcellus', serif;
+    }
+
+    .button {
+        @apply inline-block rounded-full px-8 py-2 border-2 border-black text-black no-underline uppercase tracking-widest !important;
+    }
+}
+
+video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container {
+    @apply mx-auto max-w-content;
+}
+
+.responsive-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.entry-content, .block-editor-block-list__layout {
+    h1 {
+        @apply text-2xl;
+    }
+
+    h2 {
+        @apply text-xl;
+    }
+
+    h3 {
+        @apply text-lg;
+    }
+
+    p, ul, ol {
+        a {
+            @apply text-blue-500 underline;
+
+            &:hover {
+                @apply no-underline;
+            }
+        }
+
+        @apply mb-8;
+    }
+
+    ul:not(.block-editor-block-variation-picker__variations) {
+        li {
+            @apply list-disc list-inside;
+        }
+    }
+
+    ol {
+        li {
+            @apply list-decimal list-inside;
+        }
+    }
+}
+
+.forminator-button-submit {
+    @apply transition top-0 right-0 bg-primary hover:bg-navy text-white uppercase tracking-wide px-10 py-4 rounded-full !important;
+}
+
+body:not(.home) {
+    .observer {
+        opacity: 0;
+        transition: all .35s ease-in-out;
+        transition-delay: .15s;
+        transform: translateY(15px);
+
+        &.shown {
+            opacity: 100%;
+            transform: translateY(0);
+        }
+    }
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: rgb(0 0 0) !important;
+    box-shadow: 0 0 10px rgb(0 0 0 / 29%);
+    padding: 2rem;
+    background: rgb(255 255 255 / 60%);
+}
+
+.aspect-square {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+}

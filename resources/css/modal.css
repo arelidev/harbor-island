@@ -1,57 +1,52 @@
-/* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    @apply fixed z-10 py-[100px] left-0 top-0 w-full h-full overflow-auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 
     .close {
         @apply text-gray-500 absolute cursor-pointer hover:text-gray-700 top-6 right-4;
     }
 
     .modal-content {
-        position: relative;
+        @apply relative m-auto p-0;
         background-color: #fefefe;
-        margin: auto;
-        padding: 0;
         border: 1px solid #888;
         width: 80%;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-        -webkit-animation-name: animatetop;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animateTop;
         -webkit-animation-duration: 0.4s;
-        animation-name: animatetop;
+        animation-name: animateTop;
         animation-duration: 0.4s;
 
-        .modal-header {}
+        .modal-header {
+        }
 
-        .modal-body {}
+        .modal-body {
+        }
 
-        .modal-footer {}
+        .modal-footer {
+        }
     }
 }
 
-@-webkit-keyframes animatetop {
+@-webkit-keyframes animateTop {
     from {
-        top:-300px;
-        opacity:0}
+        top: -300px;
+        opacity: 0
+    }
     to {
-        top:0;
-        opacity:1}
+        top: 0;
+        opacity: 1
+    }
 }
 
-@keyframes animatetop {
+@keyframes animateTop {
     from {
-        top:-300px;
-        opacity:0}
+        top: -300px;
+        opacity: 0
+    }
     to {
-        top:0;
-        opacity:1
+        top: 0;
+        opacity: 1
     }
 }

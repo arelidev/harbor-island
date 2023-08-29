@@ -26,7 +26,7 @@
 	</div>
 </footer>
 
-<div id="privacy-policy-modal" class="modal">
+<div id="privacy-policy-modal" class="modal" style="display: none;">
     <div class="modal-content">
         <i class="fa-regular fa-xmark fa-xl close"></i>
         <div class="modal-body">
@@ -37,84 +37,12 @@
     </div>
 </div>
 
-<div id="disclaimer-modal" class="modal">
+<div id="disclaimer-modal" class="modal" style="display: none;">
     <div class="modal-content">
         <i class="fa-solid fa-xmark close"></i>
         <div class="modal-body">
             <div class="entry-content p-8">
 				<?php get_template_part( 'template-parts/disclaimer' ); ?>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="floorplan-modal" class="modal">
-    <div class="modal-content">
-        <i class="fa-regular fa-xmark fa-xl close"></i>
-        <div class="modal-body">
-            <div class="entry-content p-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-24">
-                    <div>
-                        <p class="text-3xl leading-tight font-marcellus observer">Unit 402 Floorplan</p>
-
-                        <dl class="uppercase font-semibold mb-8 space-y-2 observer">
-                            <div class="grid grid-cols-1 md:grid-cols-2">
-                                <dt class="">Bedrooms:</dt>
-                                <dd class="text-right">3</dd>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2">
-                                <dt class="">Bathrooms:</dt>
-                                <dd class="text-right">2</dd>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2">
-                                <dt class="">View:</dt>
-                                <dd class="text-right"><a href="#">Ocean</a></dd>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2">
-                                <dt class="">Furniture & Finish:</dt>
-                                <dd class="text-right"><a href="#">Download</a></dd>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2">
-                                <dt class="">Status:</dt>
-                                <dd class="text-right">Available</dd>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2">
-                                <dt class="">Price:</dt>
-                                <dd class="text-right">$1,500/MO</dd>
-                            </div>
-                        </dl>
-
-                        <p class="text-2xl leading-tight font-marcellus observer">Tour the Residence</p>
-
-                        <div class="responsive-container">
-                            <iframe class="responsive-iframe" src="https://cpvisual-us.s3.amazonaws.com/Harbor-Island/UNIT_A_401/index.htm"></iframe>
-                        </div>
-
-                        <img src="<?= get_template_directory_uri(); ?>/images/pano.jpeg" alt="Harbor Island Beach" class="my-8" />
-
-                        <p class="font-marcellus observer">Take the next step—inquire now.</p>
-
-                        <a class="button" href="/join-the-club">
-                            Join The Club
-                            <i class="fa-sharp fa-light fa-arrow-right-long text-lg"></i>
-                        </a>
-                    </div>
-                    <div>
-                        <div class="sticky top-0">
-                        <a href="<?= get_template_directory_uri(); ?>/images/floorplan.jpg" data-fancybox>
-                            <img src="<?= get_template_directory_uri(); ?>/images/floorplan.jpg" aria-hidden="true"
-                                 alt="" class="f-panzoom__content mx-auto max-h-[70vh] observer">
-                        </a>
-                        <p class="text-primary uppercase text-center text-sm font-semibold mt-4">Click image to
-                            enlarge</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

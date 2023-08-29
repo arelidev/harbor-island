@@ -7,13 +7,13 @@
 			<p class="uppercase font-bold text-xl observer">The Most Luxurious Amenities in Melbourne Beach, FLORIDA</p>
 			<p class="observer">Harbor Island Beach Club offers a wealth of amenities to make each stay unforgettable for you and your guests.</p>
             <ul class="observer">
-                <li>Private 42-slip Community Marina</li>
+                <li>Community Marina</li>
                 <li>Private Community Beach Access with Restrooms</li>
                 <li>Riverside Resort-Style Pool & Cabanas</li>
                 <li>Fitness Room</li>
                 <li>Bike Trails & Parks</li>
-                <li>On-site Lifestyle Program Calendar</li>
-                <li>Beach & River Equipment Rentals</li>
+                <li>Lifestyle Program Calendar</li>
+                <li>Equipment Rentals</li>
             </ul>
 
 			<p class="observer">

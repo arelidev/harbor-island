@@ -10,6 +10,8 @@
 function content_block_split_shortcode( $atts, $content = null ): false|string {
 	$atts = shortcode_atts( [
 		"image"       => null,
+        "images"      => null,
+        "video"       => null,
 		"title"       => null,
 		"link"        => null,
 		"link_text"   => null,
@@ -23,10 +25,38 @@ function content_block_split_shortcode( $atts, $content = null ): false|string {
     <section class="section mt-16 lg:mt-0 <?= $atts["el_class"]; ?>">
         <div>
             <div class="md:flex items-center <?= $atts["reverse"] ? "flex-row-reverse" : ""; ?>">
-                <div class="w-full lg:w-1/2">
+                <div class="w-full lg:w-1/2 relative">
 					<?php if ( $atts["image"] ) : ?>
 						<?= wp_get_attachment_image( $atts["image"], "full", false, array( "class" => "h-screen w-full observer object-cover" ) ); ?>
 					<?php endif; ?>
+
+                    <?php if ( $atts["images"] ) : ?>
+                        <div class="swiper w-full <?= $atts["el_class"]; ?>">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <?php foreach ( explode( ",", $atts["images"] ) as $image ) : ?>
+                                    <div class="swiper-slide">
+                                        <?= wp_get_attachment_image( $image, "full", false, array( "class" => "h-screen w-full observer object-cover" ) ); ?>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+
+                            <!-- If we need scrollbar -->
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    <?php endif; ?>
+
+	                <?php if ( $atts["video"] ) : $uploads = wp_get_upload_dir(); ?>
+                        <video poster="<?= get_template_directory_uri(); ?>/images/background.jpg" class="!h-screen !relative" autoplay playsinline muted loop>
+                            <source src="<?= $uploads["baseurl"]; ?>/videos/<?= $atts["video"]; ?>" type="video/mp4">
+                        </video>
+	                <?php endif; ?>
                 </div>
                 <div class="w-full lg:w-1/2">
                     <div class="mt-8 md:mt-0 lg:w-8/12 mx-auto px-6">

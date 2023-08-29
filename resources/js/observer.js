@@ -7,7 +7,7 @@ export default function scrollObserver(selector, option) {
     let observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             setTimeout(() => {
-                console.log(entry)
+                // console.log(entry)
                 let showCount = 0
                 if (option?.once) {
                     if (showCount === 0 && entry.isIntersecting) {

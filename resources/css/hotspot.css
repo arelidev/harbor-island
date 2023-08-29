@@ -1,12 +1,28 @@
 .hotspot-wrapper {
     .hotspot-container {
         .hotspot-item {
-            @apply absolute bg-primary text-white flex items-center justify-center cursor-pointer;
-            border-radius: 16px;
-            padding: 3px;
-            height: 26px;
-            min-width: 26px;
+            @apply absolute cursor-pointer;
         }
+    }
+}
+
+.hotspot-icon {
+    @apply flex items-center justify-center text-white border border-white;
+    border-radius: 16px;
+    padding: 3px;
+    height: 26px;
+    min-width: 26px;
+
+    &.Available {
+        @apply bg-primary;
+    }
+
+    &.Unavailable {
+        @apply bg-red-500;
+    }
+
+    &.Pending {
+        @apply bg-yellow-500
     }
 }
 
@@ -16,9 +32,9 @@
 
 @keyframes pulse-animation {
     0% {
-        box-shadow: 0 0 0 0px rgba(255, 255, 255, .5);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, .5);
     }
     100% {
-        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
     }
 }

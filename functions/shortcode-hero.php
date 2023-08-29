@@ -16,15 +16,17 @@ function hero_shortcode( $atts, $content = null ): false|string {
 
 	$menu_left = [
 		[ "title" => "Home", "href" => home_url() ],
-		[ "title" => "Residence", "href" => get_permalink( 117 ) ],
-		[ "title" => "Locations", "href" => get_permalink( 63 ) ],
+		[ "title" => "Residences", "href" => get_permalink( 117 ) ],
+		[ "title" => "Location", "href" => get_permalink( 63 ) ],
 	];
 
 	$menu_right = [
-		[ "title" => "Community", "href" => get_permalink( 82 ) ],
+		[ "title" => "Amenities", "href" => get_permalink( 82 ) ],
 		[ "title" => "Management", "href" => get_permalink( 92 ) ],
-		[ "title" => "Join", "href" => get_permalink( 106 ) ],
+		[ "title" => "Join the Club", "href" => get_permalink( 106 ) ],
 	];
+
+    $uploads = wp_get_upload_dir();
 
 	ob_start();
 	?>
@@ -33,7 +35,7 @@ function hero_shortcode( $atts, $content = null ): false|string {
 			<?= wp_get_attachment_image( $atts["image"], "full", false, array( "class" => "absolute w-full h-full top-0 left-0 -z-1" ) ); ?>
 		<?php else : ?>
             <video poster="<?= get_template_directory_uri(); ?>/images/background.jpg" autoplay playsinline muted loop>
-                <source src="<?= get_template_directory_uri(); ?>/videos/<?= $atts["video"]; ?>" type="video/mp4">
+                <source src="<?= $uploads["baseurl"]; ?>/videos/<?= $atts["video"]; ?>" type="video/mp4">
             </video>
 		<?php endif; ?>
 

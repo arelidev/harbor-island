@@ -1,5 +1,7 @@
 <?php
-show_admin_bar( false );
+
+use JetBrains\PhpStorm\NoReturn;
+
 /**
  * Theme setup.
  */
@@ -43,6 +45,13 @@ function tailpress_enqueue_scripts(): void {
 
 	wp_enqueue_style( 'tailpress', tailpress_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
 	wp_enqueue_script( 'tailpress', tailpress_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+
+	wp_localize_script( 'tailpress', 'tailpress',
+		array(
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+			'nonce'    => wp_create_nonce( 'tailpress-nonce' )
+		)
+	);
 }
 
 add_action( 'wp_enqueue_scripts', 'tailpress_enqueue_scripts' );
@@ -116,3 +125,69 @@ require_once( get_template_directory() . '/functions/shortcode-gallery.php' );
 require_once( get_template_directory() . '/functions/shortcode-hero.php' );
 require_once( get_template_directory() . '/functions/shortcode-location-categories.php' );
 require_once( get_template_directory() . '/functions/shortcode-overview.php' );
+
+/**
+ * Zip all documents and trigger download
+ * @return void
+ */
+#[NoReturn] function ct_download_documents(): void {
+	if ( isset( $_POST['event_postid'] ) ) :
+		$eventID      = $_POST['event_postid'];
+		$files_to_zip = array();
+
+		$building   = get_field( "building", $eventID );
+		$unit       = get_field( "unit", $eventID );
+		$floorplan  = get_field( "2d_3d_floorplan_pdf", $eventID );
+		$ffe_link   = get_field( "ffe_pdf", $eventID );
+		$view_image = get_field( "view_image", $eventID );
+
+		if ( ! empty( $view_image ) ) :
+			$files_to_zip[] = wp_get_attachment_image_url( $view_image, "full" );
+		endif;
+
+		if ( ! empty( $floorplan ) ) :
+			$files_to_zip[] = $floorplan;
+		endif;
+
+		if ( ! empty( $ffe_link ) ) :
+			$files_to_zip[] = $ffe_link;
+		endif;
+
+		$zip                  = new ZipArchive();
+		$destination          = wp_upload_dir();
+		$destination_path     = $destination['basedir'];
+		$DelFilePath          = acf_slugify( "{$building}_$unit" ) . ".zip";
+		$zip_destination_path = $destination_path . "/" . $DelFilePath;
+
+		if ( file_exists( $zip_destination_path ) ) :
+			unlink( $zip_destination_path );
+		endif;
+
+		if ( ! $zip->open( $zip_destination_path, ZIPARCHIVE::CREATE ) ) :
+			die ( "Could not open archive" );
+		endif;
+
+		if ( $files_to_zip ) :
+			foreach ( $files_to_zip as $row ):
+				$explode        = explode( 'uploads', $row );
+				$explodes       = end( $explode );
+				$index_files    = array( $destination_path, $explodes );
+				$index_file     = implode( "", $index_files );
+				$new_index_file = basename( $index_file );
+				$zip->addFile( $index_file, $new_index_file );
+			endforeach;
+		endif;
+
+		$zip->close();
+
+		if ( file_exists( $zip_destination_path ) ) :
+			$zip_destination_paths = explode( 'wp-content', $zip_destination_path );
+			echo get_site_url() . "/wp-content" . end( $zip_destination_paths );
+		endif;
+	endif;
+
+	die();
+}
+
+add_action( 'wp_ajax_ct_download_documents', 'ct_download_documents' );
+add_action( 'wp_ajax_nopriv_ct_download_documents', 'ct_download_documents' );

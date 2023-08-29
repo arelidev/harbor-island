@@ -27,7 +27,7 @@ function location_categories_shortcode( $atts, $content = null ): false|string {
                             <li>Cocoa Beach Pier</li>
                             <li>Port Canaveral</li>
                             <li>Kennedy Space Center</li>
-                            <li>Walt Disney World Resort</li>
+                            <li>Disney World</li>
                             <li>Universal Orlando Resort</li>
                             <li>King Center for Performing Arts</li>
                             <li>McLarty Treasure Museum</li>
@@ -60,7 +60,7 @@ function location_categories_shortcode( $atts, $content = null ): false|string {
 							<li>Cafe Coconut Cove</li>
 							<li>Djon’s Chop House</li>
 							<li>Ocean 302</li>
-							<li>Oceanside Plaza</li>
+							<li>Oceanside Pizza</li>
 							<li>Melbourne Square Mall</li>
 							<li>Vero Beach Shops & Restaurants</li>
 							<li>Chart House</li>

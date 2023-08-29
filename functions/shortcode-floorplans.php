@@ -54,15 +54,15 @@ function floorplans_shortcode( $atts, $content = null ): false|string {
                 <div class="hotspot-legend flex space-x-8 mt-4">
                         <div class="hotspot-icon !px-3 flex space-x-2 Available">
                             <i class="fa-solid fa-building" aria-hidden="false"></i>
-                            <span class="uppercase font-semibold text-xs"><?= __( "Available", "tailpress" ); ?></span>
+                            <span class="uppercase font-semibold text-xs"><?= __( "Available", "hibc" ); ?></span>
                         </div>
                         <div class="hotspot-icon !px-3 flex space-x-2 Unavailable">
                             <i class="fa-solid fa-building" aria-hidden="false"></i>
-                            <span class="uppercase font-semibold text-xs"><?= __( "Unavailable", "tailpress" ); ?></span>
+                            <span class="uppercase font-semibold text-xs"><?= __( "Unavailable", "hibc" ); ?></span>
                         </div>
                         <div class="hotspot-icon !px-3 flex space-x-2 Pending">
                             <i class="fa-solid fa-building" aria-hidden="false"></i>
-                            <span class="uppercase font-semibold text-xs"><?= __( "Pending", "tailpress" ); ?></span>
+                            <span class="uppercase font-semibold text-xs"><?= __( "Pending", "hibc" ); ?></span>
                         </div>
                     </div>
             </div>
@@ -89,76 +89,76 @@ function floorplans_shortcode( $atts, $content = null ): false|string {
                                         <dl class="uppercase font-semibold mb-8 space-y-2">
 	                                        <?php if ( ! empty( get_field( "living_sq_ft" ) ) ) : ?>
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
-                                                    <dt class=""><?= __( "Living SQ. FT:", "tailpress" ); ?></dt>
+                                                    <dt class=""><?= __( "Living SQ. FT:", "hibc" ); ?></dt>
                                                     <dd class="text-right"><?php the_field( "living_sq_ft" ); ?></dd>
                                                 </div>
 	                                        <?php endif; ?>
 
 	                                        <?php if ( ! empty( get_field( "balcony_sq_ft" ) ) ) : ?>
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
-                                                    <dt class=""><?= __( "Balcony SQ. FT:", "tailpress" ); ?></dt>
+                                                    <dt class=""><?= __( "Balcony SQ. FT:", "hibc" ); ?></dt>
                                                     <dd class="text-right"><?php the_field( "balcony_sq_ft" ); ?></dd>
                                                 </div>
 	                                        <?php endif; ?>
 
                                             <?php if ( ! empty( get_field( "total_sq_ft" ) ) ) : ?>
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
-                                                    <dt class=""><?= __( "TOTAL ARCHITECTURAL SQ. FT.:", "tailpress" ); ?></dt>
+                                                    <dt class=""><?= __( "TOTAL ARCHITECTURAL SQ. FT.:", "hibc" ); ?></dt>
                                                     <dd class="text-right"><?php the_field( "total_sq_ft" ); ?></dd>
                                                 </div>
 	                                        <?php endif; ?>
 
                                             <?php if ( ! empty( get_field( "bedrooms" ) ) ) : ?>
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
-                                                    <dt class=""><?= __( "Bedrooms:", "tailpress" ); ?></dt>
+                                                    <dt class=""><?= __( "Bedrooms:", "hibc" ); ?></dt>
                                                     <dd class="text-right"><?php the_field( "bedrooms" ); ?></dd>
                                                 </div>
 	                                        <?php endif; ?>
 
 	                                        <?php if ( ! empty( get_field( "bathrooms" ) ) ) : ?>
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
-                                                    <dt class=""><?= __( "Bathrooms:", "tailpress" ); ?></dt>
+                                                    <dt class=""><?= __( "Bathrooms:", "hibc" ); ?></dt>
                                                     <dd class="text-right"><?php the_field( "bathrooms" ); ?></dd>
                                                 </div>
 	                                        <?php endif; ?>
 
 	                                        <?php if ( ! empty( get_field( "marketing_view" ) ) ) : ?>
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
-                                                    <dt class=""><?= __( "View:", "tailpress" ); ?></dt>
+                                                    <dt class=""><?= __( "View:", "hibc" ); ?></dt>
                                                     <dd class="text-right"><?php the_field( "marketing_view" ); ?></dd>
                                                 </div>
 	                                        <?php endif; ?>
 
 	                                        <?php if ( ! empty( get_field( "furniture_finish" ) ) ) : ?>
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
-                                                    <dt class=""><?= __( "FURNITURE & FINISH:", "tailpress" ); ?></dt>
+                                                    <dt class=""><?= __( "FURNITURE & FINISH:", "hibc" ); ?></dt>
                                                     <dd class="text-right"><?php the_field( "furniture_finish" ); ?></dd>
                                                 </div>
 	                                        <?php endif; ?>
 
 	                                        <?php if ( ! empty( get_field( "status" ) ) ) : ?>
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
-                                                    <dt class=""><?= __( "Status:", "tailpress" ); ?></dt>
+                                                    <dt class=""><?= __( "Status:", "hibc" ); ?></dt>
                                                     <dd class="text-right"><?php the_field( "status" ); ?></dd>
                                                 </div>
 	                                        <?php endif; ?>
 
 	                                        <?php if ( ! empty( get_field( "price" ) ) ) : ?>
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
-                                                    <dt class=""><?= __( "Price:", "tailpress" ); ?></dt>
+                                                    <dt class=""><?= __( "Price:", "hibc" ); ?></dt>
                                                     <dd class="text-right"><?php the_field( "price" ); ?></dd>
                                                 </div>
 	                                        <?php endif; ?>
                                         </dl>
 
                                         <button class="button black js-btn-download-all mb-8" data-ct_event_id="<?= get_the_ID(); ?>">
-                                            <?= __( "Download", "tailpress" ); ?>
+                                            <?= __( "Download", "hibc" ); ?>
                                             <i class="fa-sharp fa-light fa-arrow-down-to-line text-lg"></i>
                                         </button>
 
                                         <?php if ( ! empty( get_field( "virtual_tour_link" ) ) ) : ?>
                                             <p class="text-2xl leading-tight font-marcellus !mb-0">
-                                                <?= __( "Tour the Residence", "tailpress" ); ?>
+                                                <?= __( "Tour the Residence", "hibc" ); ?>
                                             </p>
 
                                             <div class="responsive-container relative">
@@ -176,7 +176,7 @@ function floorplans_shortcode( $atts, $content = null ): false|string {
 	                                    <?php endif; ?>
 
                                         <a class="button mt-8" href="<?= home_url("join-the-club"); ?>">
-											<?= __( "Join The Club", "tailpress" ); ?>
+											<?= __( "Join The Club", "hibc" ); ?>
                                             <i class="fa-sharp fa-light fa-arrow-right-long text-lg"></i>
                                         </a>
                                     </div>
@@ -188,7 +188,7 @@ function floorplans_shortcode( $atts, $content = null ): false|string {
 	                                                <?= wp_get_attachment_image( get_field( "3d_floorplan_image" ), "full", false, [ "class" => "mx-auto w-auto max-h-[70vh]" ] ); ?>
 
                                                     <span class="text-primary uppercase text-center text-sm font-semibold mt-4">
-				                                        <?= __( "Click image to enlarge", "tailpress" ); ?>
+				                                        <?= __( "Click image to enlarge", "hibc" ); ?>
                                                     </span>
                                                 </a>
 	                                        <?php endif; ?>

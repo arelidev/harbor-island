@@ -10,7 +10,7 @@ function tailpress_setup(): void {
 
 	register_nav_menus(
 		array(
-			'primary' => __( 'Primary Menu', 'tailpress' ),
+			'primary' => __( 'Primary Menu', "hibc" ),
 		)
 	);
 
@@ -43,10 +43,10 @@ add_action( 'after_setup_theme', 'tailpress_setup' );
 function tailpress_enqueue_scripts(): void {
 	$theme = wp_get_theme();
 
-	wp_enqueue_style( 'tailpress', tailpress_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
-	wp_enqueue_script( 'tailpress', tailpress_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+	wp_enqueue_style( "hibc", tailpress_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
+	wp_enqueue_script( "hibc", tailpress_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
 
-	wp_localize_script( 'tailpress', 'tailpress',
+	wp_localize_script( "hibc", "hibc",
 		array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
 			'nonce'    => wp_create_nonce( 'tailpress-nonce' )

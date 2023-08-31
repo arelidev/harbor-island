@@ -10,7 +10,7 @@
 			<a href="https://www.youtube.com/channel/UCi5sOTWjsq-Q-DY0PwNxTNQ" target="_blank"><i class="fa-brands fa-youtube"></i></a>
 		</div>
 
-		<p class="mb-6"><a href="mailto:sales@baselinepg.com" class="!no-underline !text-white">sales@baselinepg.com </a> | All Rights Reserved | <a href="#" class="!no-underline !text-white" id="modal-button" data-target-modal="privacy-policy">Privacy Policy</a><!-- | <a href="#" id="modal-button" data-target-modal="disclaimer">Disclaimer</a>--></p>
+		<p class="mb-6"><a href="mailto:sales@baselinepg.com" class="!no-underline !text-white">sales@baselinepg.com </a> | All Rights Reserved | <a href="#" class="!no-underline !text-white modal-button" data-target-modal="privacy-policy">Privacy Policy</a><!-- | <a href="#" class="modal-button" data-target-modal="disclaimer">Disclaimer</a>--></p>
 
 		<p class="mb-6">ORAL REPRESENTATIONS CANNOT BE RELIED UPON AS CORRECTLY STATING REPRESENTATIONS OF THE DEVELOPER. FOR CORRECT REPRESENTATIONS, MAKE REFERENCE TO THIS BROCHURE AND TO THE DOCUMENTS REQUIRED BY SECTION 718.503, FLORIDA STATUTES, TO BE FURNISHED BY A DEVELOPER TO A BUYER OR LESSEE.</p>
 
@@ -26,7 +26,7 @@
 	</div>
 </footer>
 
-<div id="privacy-policy-modal" class="modal" style="display: none;">
+<div id="privacy-policy" class="modal" style="display: none;">
     <div class="modal-content">
         <i class="fa-regular fa-xmark fa-xl close"></i>
         <div class="modal-body">
@@ -37,7 +37,7 @@
     </div>
 </div>
 
-<div id="disclaimer-modal" class="modal" style="display: none;">
+<div id="disclaimer" class="modal" style="display: none;">
     <div class="modal-content">
         <i class="fa-solid fa-xmark close"></i>
         <div class="modal-body">

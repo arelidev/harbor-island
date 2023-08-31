@@ -43,7 +43,7 @@ function floorplans_shortcode( $atts, $content = null ): false|string {
 		                <?php while ( $units->have_posts() ) : $units->the_post(); ?>
                             <button class="hotspot-item hotspot-icon modal-button <?php the_field( "status" ); ?>"
                                     style="left: <?= get_field( "left" ); ?>%; top: <?= get_field( "top" ); ?>%;"
-                                    data-floorplan="<?php the_field( "building" ); ?>-<?php the_field( "unit" ); ?>"
+                                    data-target-modal="<?php the_field( "building" ); ?>-<?php the_field( "unit" ); ?>"
                             >
                                 <i class="fa-solid fa-building" aria-hidden="false"></i>
                             </button>
@@ -70,7 +70,7 @@ function floorplans_shortcode( $atts, $content = null ): false|string {
 
 		<?php if ( $units->have_posts() ) : ?>
 			<?php while ( $units->have_posts() ) : $units->the_post(); ?>
-                <div id="floorplan-modal-<?php the_field( "building" ); ?>-<?php the_field( "unit" ); ?>" class="modal" style="display: none;">
+                <div id="<?php the_field( "building" ); ?>-<?php the_field( "unit" ); ?>" class="modal" style="display: none;">
                     <div class="modal-content">
                         <i class="fa-regular fa-xmark fa-xl close cursor-pointer relative z-10"></i>
 

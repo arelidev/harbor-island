@@ -6,10 +6,8 @@ window.addEventListener("load", function () {
     modalButtons.forEach((modalButton) => {
         modalButton.addEventListener("click", function (e) {
             e.preventDefault();
-
-            let floorplan = this.dataset.floorplan;
-
-            document.querySelector("#floorplan-modal-" + floorplan).style.display = "block";
+            console.log("#" + this.dataset.targetModal)
+            document.querySelector("#" + this.dataset.targetModal).style.display = "block";
         })
     })
 

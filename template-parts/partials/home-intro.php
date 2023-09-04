@@ -1,8 +1,8 @@
 <?php if ( have_rows( 'into' ) ) : ?>
 	<?php while ( have_rows( 'into' ) ): the_row(); ?>
 		<?php $link = get_sub_field( 'link' ); ?>
-        <section class="section min-h-screen flex items-center">
-            <div class="container relative py-16 md:!w-10/12 grid grid-cols-1 md:grid-cols-2 md:items-center md:gap-44">
+        <section class="section lg:min-h-screen flex items-center">
+            <div class="container relative pt-8 pb-0 lg:py-16 !lg:w-10/12 grid grid-cols-1 lg:grid-cols-2 lg:items-center lg:gap-44">
                 <div>
                     <div class="text-lg md:text-xl font-marcellus leading-relaxed observer">
 						<?= apply_filters( "the_content", get_sub_field( "content" ) ); ?>

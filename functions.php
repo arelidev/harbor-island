@@ -191,3 +191,33 @@ require_once( get_template_directory() . '/functions/shortcode-overview.php' );
 
 add_action( 'wp_ajax_ct_download_documents', 'ct_download_documents' );
 add_action( 'wp_ajax_nopriv_ct_download_documents', 'ct_download_documents' );
+
+/**
+ * Get left side menu
+ *
+ * TODO: replace with native menu manger
+ *
+ * @return array[]
+ */
+function get_menu_left(): array {
+	return [
+		[ "title" => "Home", "href" => home_url() ],
+		[ "title" => "Residences", "href" => get_permalink( 117 ) ],
+		[ "title" => "Location", "href" => get_permalink( 63 ) ],
+	];
+}
+
+/**
+ * Get right side menu
+ *
+ * TODO: replace with native menu manager
+ *
+ * @return array[]
+ */
+function get_menu_right(): array {
+	return [
+		[ "title" => "Amenities", "href" => get_permalink( 82 ) ],
+		[ "title" => "Management", "href" => get_permalink( 92 ) ],
+		[ "title" => "Join the Club", "href" => get_permalink( 106 ) ],
+	];
+}

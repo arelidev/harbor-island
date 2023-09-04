@@ -9,7 +9,7 @@
     }
 
     .button {
-        @apply inline-block rounded-full px-8 py-2 border-2 border-black text-black no-underline uppercase tracking-widest !important;
+        @apply inline-block rounded-full px-8 py-2 border-2 border-black text-black no-underline uppercase tracking-widest text-center !important;
 
         &.black {
             @apply text-white bg-black !important;

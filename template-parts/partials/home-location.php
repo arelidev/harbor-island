@@ -1,7 +1,7 @@
 <?php if ( have_rows( 'location' ) ) : ?>
 	<?php while ( have_rows( 'location' ) ): the_row(); ?>
 		<?php $link = get_sub_field( 'link' ); ?>
-        <section class="section mt-16 lg:mt-0">
+        <section class="section">
             <div>
                 <div class="md:flex items-center">
                     <div class="w-full lg:w-1/2">

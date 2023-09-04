@@ -22,12 +22,12 @@ function content_block_split_shortcode( $atts, $content = null ): false|string {
 
 	ob_start();
 	?>
-    <section class="section mt-16 lg:mt-0 <?= $atts["el_class"]; ?>">
+    <section class="section <?= $atts["el_class"]; ?>">
         <div>
-            <div class="md:flex items-center <?= $atts["reverse"] ? "flex-row-reverse" : ""; ?>">
+            <div class="lg:flex items-center <?= $atts["reverse"] ? "flex-row-reverse" : ""; ?>">
                 <div class="w-full lg:w-1/2 relative">
 					<?php if ( $atts["image"] ) : ?>
-						<?= wp_get_attachment_image( $atts["image"], "full", false, array( "class" => "h-screen w-full observer object-cover" ) ); ?>
+						<?= wp_get_attachment_image( $atts["image"], "full", false, array( "class" => "h-[400px] lg:h-screen w-full observer object-cover" ) ); ?>
 					<?php endif; ?>
 
                     <?php if ( $atts["images"] ) : ?>
@@ -36,7 +36,7 @@ function content_block_split_shortcode( $atts, $content = null ): false|string {
                             <div class="swiper-wrapper">
                                 <?php foreach ( explode( ",", $atts["images"] ) as $image ) : ?>
                                     <div class="swiper-slide">
-                                        <?= wp_get_attachment_image( $image, "full", false, array( "class" => "h-screen w-full observer object-cover" ) ); ?>
+                                        <?= wp_get_attachment_image( $image, "full", false, array( "class" => "h-[600px] lg:h-screen w-full observer object-cover" ) ); ?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -59,7 +59,7 @@ function content_block_split_shortcode( $atts, $content = null ): false|string {
 	                <?php endif; ?>
                 </div>
                 <div class="w-full lg:w-1/2">
-                    <div class="mt-8 md:mt-0 lg:w-8/12 mx-auto px-6">
+                    <div class="mt-8 lg:mt-0 lg:w-8/12 mx-auto px-6">
 						<?php if ( $atts["title"] ) : ?>
                             <p class="text-3xl leading-tight font-marcellus observer">
 								<?= $atts["title"]; ?>

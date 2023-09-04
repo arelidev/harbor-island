@@ -1,3 +1,9 @@
+<?php
+$menu_left  = get_menu_left();
+$menu_right = get_menu_right();
+$menu_items = array_merge( $menu_left, $menu_right )
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -21,6 +27,20 @@
 <div id="page" class="min-h-screen flex flex-col">
 
 	<?php do_action( 'tailpress_header' ); ?>
+
+    <header>
+        <div id="primary-menu" class="hidden bg-black p-4">
+            <ul class="space-y-4 observer">
+                <?php foreach ( $menu_items as $item ) : ?>
+                    <li class="">
+                        <a href="<?= $item["href"]; ?>" class="uppercase font-semibold !text-white !no-underline">
+                            <?= $item["title"]; ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+		</div>
+	</header>
 
 	<div id="content" class="site-content flex-grow">
 

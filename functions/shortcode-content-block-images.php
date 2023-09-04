@@ -18,15 +18,15 @@ function content_block_images_shortcode( $atts, $content = null ): false|string 
 	ob_start();
 	?>
     <section class="section">
-        <div class="container px-6 pt-24">
+        <div class="container px-6 pt-8 lg:pt-24">
 			<?php if ( $atts["title"] ) : ?>
                 <p class="text-3xl leading-tight font-marcellus observer">
 					<?= $atts["title"]; ?>
                 </p>
 			<?php endif; ?>
 
-            <div class="md:flex md:gap-8">
-                <div class="w-full md:w-7/12">
+            <div class="lg:flex lg:gap-8 ">
+                <div class="w-full lg:w-7/12">
 	                <?php if ( $atts["images"] ) : ?>
                         <?= do_shortcode("[swift_gallery images='{$atts['images']}' image_height='small'][/swift_gallery]"); ?>
 	                <?php endif; ?>
@@ -41,7 +41,7 @@ function content_block_images_shortcode( $atts, $content = null ): false|string 
                         </div>
 					<?php endif; ?>
                 </div>
-                <div class="w-full md:w-5/12 md:pt-12">
+                <div class="w-full lg:w-5/12 lg:pt-12 pt-8">
 	                <?php if ( $atts["image_right"] ) : ?>
 		                <?= wp_get_attachment_image( $atts["image_right"], "full", false, array( "class" => "h-[300px] md:h-[500px] w-full observer object-cover" ) ); ?>
 	                <?php endif; ?>

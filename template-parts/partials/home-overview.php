@@ -1,9 +1,9 @@
 <?php if ( have_rows( 'overview' ) ) : ?>
 	<?php while ( have_rows( 'overview' ) ): the_row(); ?>
-        <section class="section min-h-screen flex items-center bg-[#faf3e8]">
-            <div class="container relative py-16 md:!w-10/12 grid grid-cols-1 md:grid-cols-2 md:gap-20 md:items-center">
+        <section class="section lg:min-h-screen flex items-center bg-[#faf3e8]">
+            <div class="container relative pt-8 pb-0 lg:py-16 lg:!w-10/12 grid grid-cols-1 lg:grid-cols-2 lg:gap-20 lg:items-center">
                 <div class="observer">
-					<?= wp_get_attachment_image( get_sub_field( "image" ), "full" ); ?>
+					<?= wp_get_attachment_image( get_sub_field( "image" ), "full", false, ["class" => "mb-8 lg:mb-0"] ); ?>
                 </div>
                 <div>
                     <p class="text-xl md:text-3xl font-marcellus leading-relaxed observer">

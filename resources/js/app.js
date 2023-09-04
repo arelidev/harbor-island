@@ -30,6 +30,7 @@ window.addEventListener("load", function () {
             },
             fitToSection: false,
             scrollOverflow: false,
+            responsiveWidth: 900
         });
     }
 

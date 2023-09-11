@@ -27,7 +27,7 @@ function hero_shortcode( $atts, $content = null ): false|string {
 			<?= wp_get_attachment_image( $atts["image"], "full", false, array( "class" => "absolute w-full h-full top-0 left-0 -z-1 object-cover" ) ); ?>
 		<?php else : ?>
             <video poster="<?= get_template_directory_uri(); ?>/images/background.jpg" autoplay playsinline muted loop>
-                <source src="<?= $uploads["baseurl"]; ?>/videos/<?= $atts["video"]; ?>" type="video/mp4">
+                <source src="<?= cdn($atts["video"]); ?>" type="video/mp4">
             </video>
 		<?php endif; ?>
 

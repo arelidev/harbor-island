@@ -221,3 +221,14 @@ function get_menu_right(): array {
 		[ "title" => "Join the Club", "href" => get_permalink( 106 ) ],
 	];
 }
+
+/**
+ * Return the CDN URL
+ *
+ * @param $asset
+ *
+ * @return string
+ */
+function cdn($asset): string {
+	return "https://areli.nyc3.cdn.digitaloceanspaces.com/assets/videos/harbor-island/$asset";
+}

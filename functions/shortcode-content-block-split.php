@@ -54,7 +54,7 @@ function content_block_split_shortcode( $atts, $content = null ): false|string {
 
 	                <?php if ( $atts["video"] ) : $uploads = wp_get_upload_dir(); ?>
                         <video poster="<?= get_template_directory_uri(); ?>/images/background.jpg" class="!h-screen !relative" autoplay playsinline muted loop>
-                            <source src="<?= $uploads["baseurl"]; ?>/videos/<?= $atts["video"]; ?>" type="video/mp4">
+                            <source src="<?= cdn($atts["video"]); ?>" type="video/mp4">
                         </video>
 	                <?php endif; ?>
                 </div>

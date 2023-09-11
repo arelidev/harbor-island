@@ -1,6 +1,6 @@
 <section class="section flex py-8 relative overflow-hidden h-screen">
 	<video poster="<?= get_template_directory_uri(); ?>/images/background.jpg" autoplay playsinline muted loop>
-		<source src="<?= get_template_directory_uri(); ?>/videos/teaser.mp4" type="video/mp4">
+		<source src="<?= cdn("teaser.mp4"); ?>" type="video/mp4">
 	</video>
 
 	<div class="absolute h-full w-full top-0 left-0 bg-black opacity-40"></div>
